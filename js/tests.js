@@ -91,7 +91,7 @@ describe('Test Suite - Simple Functions', () => {
         result.should.be.equal("Verbesserungspotenziel");
     });  
     
-    it('18) Write a function that find the number of vovwels.', () => {
+    it('18) Write a function that find the number of vowels.', () => {
         let result = findNumberOfVowel("Herzlich willkommen zu unseren itclub Übungen!");
         result.should.be.equal(14);
     });   
@@ -123,6 +123,6 @@ describe('Test Suite - Simple Functions', () => {
     
     it('24) Write a function which create a complex password with 8 chars including at least one letter and one numner', () => {
         let result = suggestPassword();
-        result.length.should.matche(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
+        result.length.should.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
     });     
 });
