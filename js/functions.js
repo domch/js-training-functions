@@ -146,7 +146,12 @@ function findTheLongestWord(pSentence){
 }
     
 function findNumberOfVowel(pSentence){
-    return pSentence;
+    const vowels = ['a', 'ä', 'e', 'ı', 'i', 'u', 'ü', 'o', 'ö'];
+    
+    return pSentence.split("")
+                    .reduce(function(pTotalNumberOfVowel, pLetter){
+                        return vowels.includes(pLetter) ? pTotalNumberOfVowel++ : 0;
+                    }, 0);
 } 
     
 function maskTheString("Willkommen zu den Übungen!", ["l", "n"]){}
