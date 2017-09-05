@@ -134,13 +134,20 @@ function concatSpecially(pFirstWord, pSecondWord){
     return pFirstWord.slice(1, pFirstWord.length).concat(pSecondWord.slice(1, pSecondWord.length));
 }  
    
-function orderAlphabetically("itclub"){
-    
+function orderAlphabetically(pWord){
+    return pWord.split("").sort().join("");
 }
     
-function findTheLongestWord("Herzlich willkommen zu unseren itclub Übungen. Hier sehen Sie Ihre Verbesserungspotenziel"){}
+function findTheLongestWord(pSentence){
+    return pSentence.split(" ")
+                    .reduce(function(pTheLongest, pWord){
+                        return pTheLongest.length > pWord ? pTheLongest : pWord;
+                    }, "");
+}
     
-function findNumberOfVowel("Herzlich willkommen zu unseren itclub Übungen!"){} 
+function findNumberOfVowel(pSentence){
+    return pSentence;
+} 
     
 function maskTheString("Willkommen zu den Übungen!", ["l", "n"]){}
     
