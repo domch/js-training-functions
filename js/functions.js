@@ -4,27 +4,62 @@
  */
 
 
-function sum(1, 3){}
+function sum(a, b){
+    return a + b;
+}
     
-function substract(7, 5){}
+function substract(a, b){
+    return a - b;
+}
     
-function calculateHypotenuse(3, 4){}
+function calculateHypotenuse(a, b){
+    return Math.sqrt(sum(Math.pow(a, 2), Math.pow(b, 2)));
+}
     
-function reverse("itclub"){}
+function reverse(pWord){
+    return pWord.split("").reverse().join("");
+}
     
-function getCurrentDate(new Date(2017, 9-1, 4)){}
+function getCurrentDate(pDate){
+    return new String("")
+                .concat(pDate.getDate()).concat("/")
+                .concat(pDate.getMonth()+1).concat("/")
+                .concat(pDate.getFullYear());
+}
     
-function rectngleArea(3, 9){}
+function rectngleArea(pLongEdge, pShortEdge){
+    return pLongEdge * pShortEdge;
+}
     
-function circleArea(3){}
+function circleArea(pDiameter){
+    return Math.round(Math.PI * Math.pow(pDiameter, 2));
+}
     
-function getMonthName(new Date(2017, 9-1, 4)){}
+function getMonthName(pDate){
+    var monthNames = ["Ocak", "Subat", "Mart", "Nisan", "Mayis", "Haziran", "Temmuz", "Agustos", "Eylül", "Ekim", "Kasim", "Aralik"];
+    return monthNames[pDate.getMonth()];
+}
 
-function getHoroscope(new Date(2017, 9-1, 4)){}
+function getHoroscope(pDate){
     
-function findFactorial(4){}
+}
     
-function capitalize("volki"){}
+function findFactorial(pLimit){
+    return new Array(pLimit).reduce(function(pFactorial, pValue, pIndex){
+        return pFactorial * pIndex;
+    }, 1);
+}
+    
+// Alternative way?
+function capitalize(pWord){
+    return pWord.split("")
+                .map(function(pValue, pIndex, pArray){
+                    if(pIndex == 0)
+                        pArray[pIndex] = pArray[pIndex].toUpperCase();
+                    return pValue;
+                })
+                .join("");
+}
     
 function findSocialLevel(150000){}
     
