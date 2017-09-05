@@ -141,7 +141,7 @@ function orderAlphabetically(pWord){
 function findTheLongestWord(pSentence){
     return pSentence.split(" ")
                     .reduce(function(pTheLongest, pWord){
-                        return pTheLongest.length > pWord ? pTheLongest : pWord;
+                        return pTheLongest.length > pWord.length ? pTheLongest : pWord;
                     }, "");
 }
     
@@ -150,15 +150,26 @@ function findNumberOfVowel(pSentence){
     
     return pSentence.split("")
                     .reduce(function(pTotalNumberOfVowel, pLetter){
-                        return vowels.includes(pLetter) ? pTotalNumberOfVowel++ : 0;
+                        return vowels.includes(pLetter) ? pTotalNumberOfVowel++ : pTotalNumberOfVowel;
                     }, 0);
 } 
     
-function maskTheString("Willkommen zu den Übungen!", ["l", "n"]){}
+function maskTheString(pSentence, pLetterList){
+    const regex = new RegExp("["+pLetterList.join("")+"]", "gi");
+    return pSentence.replace(regex, "*");
+}
     
-function sumEventNumbersTo(193){}    
+function sumEventNumbersTo(pLimit){
+    return new Array(pLimit).reduce(function(pTotal, pValue, pIndex){
+        return pIndex % 2 == 0 ? pTotal + pIndex : pTotal;
+    });
+}    
     
-function toCamelCase("it club volketwil"){}
+function toCamelCase(pSentence){
+    return pSentence.split(" ")
+                    .map(pWord => capitalize(pWord))
+                    .join("");
+}
  
 function findWordsByChars("Every saturday, we have a it-club checkpoint!", ["o", "u"]){}
     
